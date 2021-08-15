@@ -11,5 +11,3 @@
 - Nome ser igual a bilometro
 - Comparação em tabela
 - Comparação dentre os computadores do usuario
-
-https://github.com/JuniorKeto/Comparador-Jogos

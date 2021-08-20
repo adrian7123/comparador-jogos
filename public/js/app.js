@@ -5010,9 +5010,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Teste = function Teste() {
-  var foo = "React";
+  var foo = "moises";
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h1", {
-    children: ["Hello ", foo]
+    children: ["O six \xE9 o ", foo]
   });
 };
 

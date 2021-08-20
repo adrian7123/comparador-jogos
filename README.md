@@ -11,3 +11,16 @@
 - Nome ser igual a bilometro
 - Comparação em tabela
 - Comparação dentre os computadores do usuario
+
+
+### Tecnologias
+
+- Back-End
+
+> [Laravel](https://laravel.com)
+
+- Front-End
+
+> [React](https://reactjs.org)
+> [Inertiajs](https://inertiajs.com)
+> [Styled-Components](https://styled-components.com)

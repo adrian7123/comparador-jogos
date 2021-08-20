@@ -1,11 +1,11 @@
 import React from "react";
 
 const Teste = () => {
-    let foo = "React";
+    let foo = "moises";
 
     return (
         <h1>
-            Hello {foo}
+            O six é o {foo}
         </h1>
     );
 };

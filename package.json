@@ -13,6 +13,7 @@
         "@babel/preset-react": "^7.14.5",
         "@inertiajs/inertia": "^0.10.1",
         "@inertiajs/inertia-react": "^0.7.1",
+        "@pmmmwh/react-refresh-webpack-plugin": "^0.5.0-rc.0",
         "autoprefixer": "^10.3.1",
         "axios": "^0.21",
         "laravel-mix": "^6.0.6",
@@ -20,6 +21,7 @@
         "postcss": "^8.3.6",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
+        "react-refresh": "^0.10.0",
         "tailwindcss": "^2.2.7"
     },
     "dependencies": {

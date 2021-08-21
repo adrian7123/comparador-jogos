@@ -7,8 +7,8 @@ use Inertia\Inertia;
 
 class HomeController extends Controller
 {
-    public function teste()
+    public function home()
     {
-        return Inertia::render('Teste');
+        return Inertia::render('Home');
     }
 }

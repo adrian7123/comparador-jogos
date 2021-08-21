@@ -15,3 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'home']);
+Route::get('/login', [HomeController::class, 'login']);
+Route::get('/cadastro', [HomeController::class, 'cadastro']);

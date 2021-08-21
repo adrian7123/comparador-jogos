@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import MenuLateral from '../Components/MenuLateral';
 
 class index extends Component {
     render() {
         return (
-          <div>
-              
-          </div> 
+            <MenuLateral>
+                Home
+            </MenuLateral>
         );
     }
 }

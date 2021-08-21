@@ -1,11 +1,14 @@
 module.exports = {
+    // jit: true,
     purge: [],
     darkMode: false, // or 'media' or 'class'
     theme: {
-        fontfamily: {
-            'sans': ['Montserrat']
+        extend: {
+            colors: {
+                'primary': "#3d0b40",
+                'secundary': "#1d1757"
+            },
         },
-        extend: {},
     },
     variants: {
         extend: {

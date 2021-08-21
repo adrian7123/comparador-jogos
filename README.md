@@ -24,3 +24,4 @@
 > [React](https://reactjs.org)
 > [Inertiajs](https://inertiajs.com)
 > [Styled-Components](https://styled-components.com)
+> [TailwindCss](https://tailwindcss.com)

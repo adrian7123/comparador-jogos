@@ -32,7 +32,7 @@ class index extends Component {
                     </div>
 
                     <div>
-                    <a class="inline-block align-baseline font-bold text-sm text-quinary hover:text-quaternary" href="/cadastro">
+                    <a class="inline-block align-baseline font-bold text-sm text-quinary hover:text-quaternary" href="/login">
                         Já tem uma conta? Entre por aqui!
                     </a>
                     </div>

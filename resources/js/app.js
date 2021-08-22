@@ -14,10 +14,12 @@ createInertiaApp({
 
 import { InertiaProgress } from '@inertiajs/progress'
 
-InertiaProgress.init()
+InertiaProgress.init({
+    color: "#9900ff"
+})
 
-import Alpine from 'alpinejs'
+import NProgress from 'nprogress'
+import { Inertia } from '@inertiajs/inertia'
 
-window.Alpine = Alpine
-
-Alpine.start()
+Inertia.on('start', () => NProgress.start())
+Inertia.on('finish', () => NProgress.done())

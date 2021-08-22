@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from '@inertiajs/inertia-react'
 
 class index extends Component {
     render() {
@@ -23,9 +24,9 @@ class index extends Component {
                     </div>
 
                     <div>
-                    <a class="inline-block align-baseline font-bold text-sm text-quinary hover:text-quaternary" href="/cadastro">
+                    <Link class="inline-block align-baseline font-bold text-sm text-quinary hover:text-quaternary" href="/cadastro">
                         Não tem uma conta? Cadastre-se aqui!
-                    </a>
+                    </Link>
                     </div>
                 </form>
             </div>

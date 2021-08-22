@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from '@inertiajs/inertia-react'
 
 class index extends Component {
     render() {
@@ -19,7 +20,7 @@ class index extends Component {
                     <div class="mb-4">
                     <label class="block text-quinary text-sm font-bold mb-2" for="password">Senha</label>
                     <input class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Sua senha aqui :D"/>
-                   
+
                     <label class="block text-quinary text-sm font-bold mb-2" for="password">Confirme sua senha</label>
                     <input class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Repita sua senha :D"/>
                     <p class="text-red-500 text-xs italic">Senha incorreta.</p>
@@ -32,9 +33,9 @@ class index extends Component {
                     </div>
 
                     <div>
-                    <a class="inline-block align-baseline font-bold text-sm text-quinary hover:text-quaternary" href="/login">
+                    <Link class="inline-block align-baseline font-bold text-sm text-quinary hover:text-quaternary" href="/login">
                         Já tem uma conta? Entre por aqui!
-                    </a>
+                    </Link>
                     </div>
                 </form>
             </div>

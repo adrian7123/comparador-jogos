@@ -21,7 +21,6 @@ class index extends Component {
                             <Square/>
                             <Square/>
                             <Square/>
-
                         </div>
                     </div>
                 </div>

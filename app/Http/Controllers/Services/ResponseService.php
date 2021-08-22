@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Traits;
+namespace App\Http\Controllers\Services;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ResponseTrait extends Controller
+trait ResponseService
 {
     public function errorMessage(string $message, array $campos = null)
     {

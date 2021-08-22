@@ -1,32 +1,26 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import MenuLateral from '../Components/MenuLateral';
 
-function Square() {
-    return (
-        <div className="h-20 w-16 bg-secundary"></div>
-    )
-}
+function index() {
 
-class index extends Component {
-    render() {
-        return (
-            <MenuLateral>
-                <div className="text-lg text-center">
+    const [count, setCount] = useState(0);
+
+    return (
+        <MenuLateral>
+            <div className="text-lg text-center">
+                <div className="block">
+                    <div>
+                        Jogos do momento
+                    </div>
                     <div className="block">
-                        <div>
-                            Jogos do momento
-                        </div>
-                        <div className="flex overflow-x-scroll">
-                            <Square/>
-                            <Square/>
-                            <Square/>
-                            <Square/>
-                        </div>
+                        <h1 className="text-lg">{count}</h1>
+
+                        <button onClick={() => setCount(count + 1)}>+</button>
                     </div>
                 </div>
-            </MenuLateral>
-        );
-    }
+            </div>
+        </MenuLateral>
+    )
 }
 
 export default index;

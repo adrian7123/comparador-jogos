@@ -5,6 +5,8 @@ function index() {
 
     const [count, setCount] = useState(0);
 
+    console.log(route('login'))
+
     return (
         <MenuLateral>
             <div className="text-lg text-center">

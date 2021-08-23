@@ -5,14 +5,19 @@ import Axios from 'axios'
 class index extends Component {
     constructor(props) {
         super(props);
-        this.myRef = React.createRef();
+        this.myRef = React.createRef()
+        this.email = React.createRef()
     }
     render() {
 
         const registrar = async (e) => {
             e.preventDefault();
 
+            validaEmail(this.email.current, true)
+
             let form = this.myRef.current
+
+            let branco = false
 
             let data = await Axios.post(route('user.register'), {
                 name: form[0].value,
@@ -20,6 +25,16 @@ class index extends Component {
                 password: form[2].value,
             }).then(res => res.data)
         }
+
+        const validaEmail = (e, fail = false) => {
+
+            if(fail) {
+                e.classList.add('border-red-500')
+            } else {
+                e.target.classList.remove('border-red-500')
+            }
+        }
+
         return (
             <div className="grid w-screen h-screen place-items-center bg-primary">
                 <form ref={this.myRef} onSubmit={registrar} className="border border-quinary rounded bg-secondary px-8 pt-6 pb-8 mb-4">
@@ -31,7 +46,7 @@ class index extends Component {
 
                     <div className="mb-4">
                     <label className="block text-quinary text-sm font-bold mb-2" htmlFor="email"> E-mail </label>
-                    <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Seu e-mail aqui :D"/>
+                    <input ref={this.email} onChange={validaEmail} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Seu e-mail aqui :D"/>
                     </div>
 
                     <div className="mb-4">

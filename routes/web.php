@@ -15,12 +15,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::middleware('guest')->group(function () {
+Route::middleware('UserGuest')->group(function () {
     Route::get('/login', [HomeController::class, 'login'])->name('login');
     Route::get('/cadastro', [HomeController::class, 'cadastro'])->name('cadastro');
 });
 
-Route::middleware('auth')->group(function () {
+Route::middleware('UserAuth')->group(function () {
     Route::get('/', [HomeController::class, 'home'])->name('home');
+    Route::get('/logout', [HomeController::class, 'logOut'])->name('logOut');
 });
 

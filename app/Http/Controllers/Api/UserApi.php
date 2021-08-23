@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Auth\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Services\ResponseService;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
 
 class UserApi extends Controller
 {
@@ -14,6 +15,10 @@ class UserApi extends Controller
 
     public function register(Request $r)
     {
+
+        if(array_key_exists('jwt', $_COOKIE)) {
+            $token = Cookie::forget('jwt');
+        }
 
         $required = [
             'name',
@@ -42,9 +47,14 @@ class UserApi extends Controller
 
         $user = User::create($data);
 
-        Auth::login($user);
+        $auth = new Auth;
 
-        return $this->successMessage('sucesso');
+        $token = $auth->gerarToken([
+            'email' => $user->email,
+            'password' => $user->password
+        ]);
+
+        return response($this->successMessage('sucesso'))->withCookie(cookie('jwt', $token));
     }
 
     public function login(Request $r)
@@ -67,14 +77,19 @@ class UserApi extends Controller
             return $this->errorMessage('falta de parametros', $on_data);
         }
 
-        $user = User::where('email', $data['email'])->where('password', $data['password'])->first();
+        $user = User::where('email', $data['email'])->where('password', md5($data['password']))->first();
 
         if(empty($user)) {
             return $this->errorMessage('Email ou senha invalidos', ['email']);
         }
 
-        return [];
+        $auth = new Auth;
 
+        $token = $auth->gerarToken([
+            'email' => $user->email,
+            'password' => $user->password
+        ]);
 
+        return response($this->successMessage('sucesso'))->withCookie(cookie('jwt', $token));
     }
 }

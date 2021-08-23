@@ -17,11 +17,11 @@
 
 - Back-End
 
-> [Laravel](https://laravel.com)
+    - [Laravel](https://laravel.com)
 
 - Front-End
 
-> [React](https://reactjs.org)
-> [Inertiajs](https://inertiajs.com)
-> [Styled-Components](https://styled-components.com)
-> [TailwindCss](https://tailwindcss.com)
+   - [React](https://reactjs.org)
+   - [Inertiajs](https://inertiajs.com)
+   - [Styled-Components](https://styled-components.com)
+   - [TailwindCss](https://tailwindcss.com)

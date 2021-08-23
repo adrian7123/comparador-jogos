@@ -13,7 +13,6 @@ class index extends Component {
         const registrar = async (e) => {
             e.preventDefault();
 
-            validaEmail(this.email.current, true)
 
             let form = this.myRef.current
 
@@ -24,6 +23,8 @@ class index extends Component {
                 email: form[1].value,
                 password: form[2].value,
             }).then(res => res.data)
+
+            validaEmail(this.email.current, data.fail)
         }
 
         const validaEmail = (e, fail = false) => {

@@ -8,6 +8,7 @@ use App\Http\Controllers\Services\ResponseService;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Redirect;
 
 class UserApi extends Controller
 {
@@ -57,7 +58,7 @@ class UserApi extends Controller
         return response($this->successMessage('sucesso'))->withCookie(cookie('jwt', $token));
     }
 
-    public function login(Request $r)
+    public function logar(Request $r)
     {
         $required = [
             'email',
@@ -91,5 +92,12 @@ class UserApi extends Controller
         ]);
 
         return response($this->successMessage('sucesso'))->withCookie(cookie('jwt', $token));
+    }
+
+    public function logOut()
+    {
+        $cookie = Cookie::forget('jwt');
+
+        return Redirect::route('home')->withCookie($cookie);
     }
 }

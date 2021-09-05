@@ -22,6 +22,5 @@ Route::middleware('UserGuest')->group(function () {
 
 Route::middleware('UserAuth')->group(function () {
     Route::get('/', [HomeController::class, 'home'])->name('home');
-    Route::get('/logout', [HomeController::class, 'logOut'])->name('logOut');
 });
 

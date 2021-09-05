@@ -51,7 +51,7 @@ class Auth
 
   public static function admin(): bool
   {
-    $token = key_exists('jwt', $_COOKIE) ? $_COOKIE['jwt'] : null;
+    $token = key_exists('ted', $_COOKIE) ? $_COOKIE['ted'] : null;
 
     if ($token == md5('admin')) {
       return true;
@@ -62,7 +62,7 @@ class Auth
 
   public static function user(): bool
   {
-    $token = key_exists('jwt', $_COOKIE) ? $_COOKIE['jwt'] : null;
+    $token = key_exists('ted', $_COOKIE) ? $_COOKIE['ted'] : null;
 
     if($token == null) {
         return false;

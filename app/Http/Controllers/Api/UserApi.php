@@ -17,8 +17,8 @@ class UserApi extends Controller
     public function register(Request $r)
     {
 
-        if(array_key_exists('jwt', $_COOKIE)) {
-            $token = Cookie::forget('jwt');
+        if(array_key_exists('ted', $_COOKIE)) {
+            $token = Cookie::forget('ted');
         }
 
         $required = [
@@ -55,7 +55,7 @@ class UserApi extends Controller
             'password' => $user->password
         ]);
 
-        return response($this->successMessage('sucesso'))->withCookie(cookie('jwt', $token));
+        return response($this->successMessage('sucesso'))->withCookie(cookie('ted', $token));
     }
 
     public function logar(Request $r)
@@ -91,12 +91,12 @@ class UserApi extends Controller
             'password' => $user->password
         ]);
 
-        return response($this->successMessage('sucesso'))->withCookie(cookie('jwt', $token));
+        return response($this->successMessage('sucesso'))->withCookie(cookie('ted', $token));
     }
 
     public function logOut()
     {
-        $cookie = Cookie::forget('jwt');
+        $cookie = Cookie::forget('ted');
 
         return Redirect::route('home')->withCookie($cookie);
     }

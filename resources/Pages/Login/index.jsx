@@ -6,13 +6,14 @@ import { Inertia } from '@inertiajs/inertia'
 
 export default function index() {
 
+    let Email = (e) => inputGeneric(e)
+    let Senha = (e) => inputGeneric(e)
+
     const loading = useRef()
-    let response = null
 
     async function Logar(element) {
         element.preventDefault()
         let formElements = element.target.elements
-
 
         let formEmail = formElements.email
         let formSenha = formElements.senha
@@ -20,7 +21,7 @@ export default function index() {
         let email = Email(formEmail)
         let senha = Senha(formSenha)
 
-        if(!email.checkEmpty() || !senha.checkEmpty()) {
+        if(!email.isEmpty() || !senha.isEmpty()) {
             let data = {
                 email: email.value,
                 password: senha.value
@@ -34,7 +35,7 @@ export default function index() {
 
             if(res.fail) {
                 formSenha.value = ''
-                email.setMessage(res.message)
+                email.setErrorMessage(res.message)
             } else {
                 Inertia.get(route('home'), {}, {
                     replace: true
@@ -42,14 +43,6 @@ export default function index() {
             }
         }
 
-    }
-
-    function Email(e) {
-        return inputGeneric(e);
-    }
-
-    function Senha(e) {
-        return inputGeneric(e);
     }
 
     return (

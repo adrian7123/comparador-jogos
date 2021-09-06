@@ -1,4 +1,5 @@
 export function inputGeneric(element) {
+
     let value = ''
     let input = null
 
@@ -15,15 +16,23 @@ export function inputGeneric(element) {
     function erro() {
         input.classList.add('border-red-500')
 
-        // show message
-        message.classList.remove('hidden')
+        try {
+            // show message
+            message.classList.remove('hidden')
+        } catch(e) {
+            console.warn("mensagem nao definida, por favor defina uma tag com 'name' de message")
+        }
     }
 
     function removeErro() {
         input.classList.remove('border-red-500')
 
-        // hidden message
-        message.classList.add('hidden')
+        try {
+            // hidden message
+            message.classList.add('hidden')
+        } catch(e) {
+            console.warn("mensagem nao definida, por favor defina uma tag com 'name' de message")
+        }
     }
 
     // executa quando usuario esta modificando
@@ -31,7 +40,7 @@ export function inputGeneric(element) {
 
     return {
         value,
-        checkEmpty() {
+        isEmpty() {
             let response = false
 
             if(value.trim() == '' || value == null) {
@@ -43,11 +52,26 @@ export function inputGeneric(element) {
 
             return response
         },
-
-        setMessage(text) {
+        setErrorMessage(text) {
             erro()
-            console.log(message.textContent)
             message.textContent=text
+        },
+        isEqual(compare) {
+            if(value != compare) {
+                erro()
+
+                return false
+            }
+
+            return true
+        },
+        setLength(minLength) {
+            if(value.length < minLength) {
+                erro()
+                return false
+            }
+
+            return true
         }
     }
 }
